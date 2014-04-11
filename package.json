@@ -1,0 +1,20 @@
+{
+  "name": "node-connection-drop",
+  "version": "0.1.0",
+  "description": "Node.js websocket connection drop on v0.10.26 seen as load increases",
+  "dependencies": {
+      "socket.io": "~0.9.16",
+      "socket.io-client": "~0.9.16"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prateekmr/node-connection-drop.git"
+  },
+  "author": "prateekmr",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/prateekmr/node-connection-drop/issues"
+  },
+  "homepage": "https://github.com/prateekmr/node-connection-drop"
+}
