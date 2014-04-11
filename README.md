@@ -17,7 +17,7 @@ Server.js is a plain https node.js based server that runs socket.io without any 
 
 ### Running the test ###
 
-Run server (by default runs oon port 9010):
+Run server (by default runs on port 9010):
 
 node server.js
 
