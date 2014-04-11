@@ -34,7 +34,7 @@ Each run of client.js attempts to maintain 2000 websocket connections with the s
 
 On the machine running server.js I used perfmon to capture the system reported TCPv4\Connections Established and Working Set of node.exe process
 
-Node 0.8 graphs look as expected. The client disconnects do not show up in Connections Established counter because the counter also shows those TCP counters that are in CLOSE_WAIT state and new connections are started quickly.
+Node 0.8 graphs look as expected as 4 runs of clients started one after the another load up the server to 8k connections with each connection disconnecting. Each connection also disconnects after 3 minutes but it does not reflect in Connections Established counter because the counter also shows those TCP counters that are in CLOSE_WAIT state and new connections are started quickly by client.js.
 
 ![node0.8](https://raw.githubusercontent.com/prateekmr/node-connection-drop/master/report/Node0.8_Connections.jpg)
 
