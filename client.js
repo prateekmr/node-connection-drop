@@ -1,11 +1,13 @@
 'use strict';
 // for node 0.10 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+require('http').globalAgent.maxSockets = 2000;
+require('https').globalAgent.maxSockets = 2000;
 
 var io = require('socket.io-client'),
     config = {
         host: process.argv[2],
-        MaxSockets : parseInt(process.argv[3]) || 1000
+        MaxSockets : parseInt(process.argv[3]) || 2000
     },
     stats = {
         connected: 0,
