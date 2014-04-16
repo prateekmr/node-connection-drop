@@ -30,8 +30,14 @@ function connectOne(id) {
     socket.on('connect', function(){
        isConnected = true;
        ++stats.connected;
+       // send some data every 40 secs
+       var x  = setInterval(function(){
+            socket.emit('ping', function handlePong(data) { });
+       },40*1000);
+
        // self disconnect after some minutes. this simulates a production traffic pattern  
        setTimeout(function(){
+           clearInterval(x);
            if(isConnected) {
                 ++stats.forcedDisconnects;
                 socket.disconnect(); 

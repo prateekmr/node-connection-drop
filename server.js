@@ -21,11 +21,14 @@ io.set('log', false);
 
 io.sockets.on('connection', function(socket) {
     ++connected;
-    socket.on('error', function(e){
-        --connected;
-    });
+    
     socket.on('disconnect', function(r){
         --connected;
+    });
+    socket.on('ping', function(ack){
+        if(typeof ack === 'function') {
+            ack('pong');
+        }
     });
 });
 
